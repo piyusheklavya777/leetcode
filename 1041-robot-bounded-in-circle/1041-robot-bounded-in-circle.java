@@ -4,8 +4,6 @@ class Solution {
         int[][] dirs = new int[][]{{0,1},{-1,0},{0,-1},{1,0}};
         
         int dir = 0, x = 0, y = 0, loops = 4;
-        
-        while (loops-- > 0) {
             
             for (Character c : a.toCharArray())
                 if (c == 'L') {
@@ -19,12 +17,6 @@ class Solution {
                     y += dirs[dir][1];
                 }
             
-            if (x == 0 && y == 0 && dir == 0) return true;
-
-        }
-
-        
-        return x == 0 && y == 0 && dir == 0;
-        
+            return (x == 0 && y == 0) || dir != 0;
     }
 }
