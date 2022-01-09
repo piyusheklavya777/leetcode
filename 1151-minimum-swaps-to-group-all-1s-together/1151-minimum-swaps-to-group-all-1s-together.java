@@ -7,7 +7,7 @@ class Solution {
             if (x == 1)
                 ones++;
         
-        Queue<Integer> q = new ArrayDeque<>();
+        Deque<Integer> q = new ArrayDeque<>();
         
         for (int i = 0; i < ones; i++) {
             q.offer(a[i]);
