@@ -14,28 +14,28 @@
  * }
  */
 class Solution {
-    int sum;
+
     public int sumRootToLeaf(TreeNode root) {
         
         if (root == null) return 0;
         
-        sum = 0;
-        
-        dfs(root, 0);
-        
-        return sum;
+        return dfs(root, 0);
         
     }
     
-    private void dfs(TreeNode r, int tillNow) {
+    private int dfs(TreeNode r, int tillNow) {
         
         if (r.left == null && r.right == null)
-            sum += tillNow << 1 | r.val;
+            return tillNow << 1 | r.val;
+        
+        int left = 0, right = 0;
         
         if (r.left != null)
-            dfs(r.left, tillNow << 1 | r.val);
+            left = dfs(r.left, tillNow << 1 | r.val);
         
         if (r.right != null)
-            dfs(r.right, tillNow << 1 | r.val);
+            right = dfs(r.right, tillNow << 1 | r.val);
+        
+        return left + right;
     }
 }
