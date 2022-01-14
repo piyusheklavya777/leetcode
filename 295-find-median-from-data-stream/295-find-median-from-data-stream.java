@@ -5,7 +5,7 @@ class MedianFinder {
     public MedianFinder() {
         
         higherHalf = new PriorityQueue<>(); // contains the higher half of numbers
-        lowerHalf = new PriorityQueue<>((va, vb) -> vb - va); // lower half.
+        lowerHalf = new PriorityQueue<>(Collections.reverseOrder()); // lower half.
         
     }
     
