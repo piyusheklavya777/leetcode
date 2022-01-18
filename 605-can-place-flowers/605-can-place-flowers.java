@@ -1,8 +1,6 @@
 class Solution {
     public boolean canPlaceFlowers(int[] bed, int toPlant) {
         
-        Set<Integer> plantedAt = new HashSet<>();
-        
         int n = bed.length, planted = 1, notPlanted = 0;
         
         for (int i = 0; i < n; i++) {
@@ -18,6 +16,7 @@ class Solution {
                 
                 bed[i] = 1;
                 toPlant--;
+                i++;
             }
             
         }
